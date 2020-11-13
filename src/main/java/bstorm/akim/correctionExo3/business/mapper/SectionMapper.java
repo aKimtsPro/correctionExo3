@@ -17,6 +17,9 @@ public class SectionMapper implements Mapper<SectionDTO, Section> {
 
     @Override
     public SectionDTO toDTO(Section section) {
+        if(section == null)
+            return null;
+
         return new SectionDTO(
                 section.getId(),
                 section.getName(),
@@ -29,6 +32,10 @@ public class SectionMapper implements Mapper<SectionDTO, Section> {
 
     @Override
     public Section toEntity(SectionDTO sectionDTO) {
+
+        if(sectionDTO == null)
+            return null;
+
         Section section = new Section();
 
         section.setId(sectionDTO.getId());

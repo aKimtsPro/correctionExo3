@@ -18,6 +18,10 @@ public class StudentMapper implements Mapper<StudentDTO, Student> {
 
     @Override
     public StudentDTO toDTO(Student student) {
+
+        if(student == null)
+            return null;
+
         return new StudentDTO(
                 student.getId(),
                 student.getFirstname(),
@@ -32,6 +36,10 @@ public class StudentMapper implements Mapper<StudentDTO, Student> {
 
     @Override
     public Student toEntity(StudentDTO studentDTO) {
+
+        if(studentDTO == null)
+            return null;
+
         Student entity = new Student();
         entity.setId(studentDTO.getId());
         entity.setFirstname(studentDTO.getFirstname());
