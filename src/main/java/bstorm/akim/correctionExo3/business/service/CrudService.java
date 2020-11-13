@@ -1,5 +1,6 @@
 package bstorm.akim.correctionExo3.business.service;
 
+import bstorm.akim.correctionExo3.exception.ElementAlreadyExistsException;
 import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
 
 import javax.swing.text.Element;
@@ -8,7 +9,7 @@ import java.util.List;
 public interface CrudService<DTO, ID> {
 
     // Create
-    void create(DTO toCreate);
+    void create(DTO toCreate) throws ElementAlreadyExistsException;
 
     // Read
     DTO readOne(ID id) throws ElementNotFoundException;

@@ -5,12 +5,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Getter @Setter
 @NoArgsConstructor
-public class Section {
+public class Section implements Serializable {
 
     @Id
     @Column(name = "section_id")
@@ -22,7 +23,7 @@ public class Section {
     @Column(name = "delegate_id")
     private int delegateId;
 
-    @OneToMany(mappedBy = "section")
+    @OneToMany(mappedBy = "section"/*, fetch = FetchType.EAGER*/)
     private Collection<Student> students;
 
 }

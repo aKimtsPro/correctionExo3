@@ -1,6 +1,7 @@
 package bstorm.akim.correctionExo3.business.mapper;
 
 import bstorm.akim.correctionExo3.business.dto.SectionDTO;
+import bstorm.akim.correctionExo3.business.dto.SmolSectionDTO;
 import bstorm.akim.correctionExo3.business.dto.StudentDTO;
 import bstorm.akim.correctionExo3.data_access.entities.Section;
 import bstorm.akim.correctionExo3.data_access.entities.Student;
@@ -14,11 +15,16 @@ import java.time.ZoneId;
 public class StudentMapper implements Mapper<StudentDTO, Student> {
 
     @Autowired
-    private Mapper<SectionDTO, Section> mapper;
+    private Mapper<SmolSectionDTO, Section> mapper;
+
+    // ATTENTION, SI DEPENDENCES CIRCULAIRES, DECLARER LA DEPENDENCE AVEC @AUTOWIRED
+//    public StudentMapper(Mapper<SectionDTO, Section> mapper) {
+//        this.mapper = mapper;
+//    }
 
     @Override
     public StudentDTO toDTO(Student student) {
-
+        // on evite les nullPointer
         if(student == null)
             return null;
 
@@ -36,7 +42,7 @@ public class StudentMapper implements Mapper<StudentDTO, Student> {
 
     @Override
     public Student toEntity(StudentDTO studentDTO) {
-
+        // on evite les nullPointer
         if(studentDTO == null)
             return null;
 
