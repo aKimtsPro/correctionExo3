@@ -1,12 +1,14 @@
 package bstorm.akim.correctionExo3.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 @Component
+@Profile("start")
 public class MenuPrincipalImpl implements MenuPrincipal {
 
     @Autowired
