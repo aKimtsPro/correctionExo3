@@ -1,4 +1,4 @@
-package bstorm.akim.correctionExo3.presentation;
+package bstorm.akim.correctionExo3.presentation.console;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;

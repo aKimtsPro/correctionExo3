@@ -1,8 +1,6 @@
-package bstorm.akim.correctionExo3.presentation;
+package bstorm.akim.correctionExo3.presentation.console;
 
-import bstorm.akim.correctionExo3.business.dto.SectionDTO;
 import bstorm.akim.correctionExo3.business.service.CrudService;
-import bstorm.akim.correctionExo3.exception.ElementAlreadyExistsException;
 import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
