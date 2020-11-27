@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 // DTO sans info sur la section pour
 // eviter la redondance d'info dans le SectionDTO
 // Ainsi que les stackOverFlow
-public class SmolStudentDTO {
+public class SectionStudentDTO {
     private int id;
     private String firstname;
     private String lastname;

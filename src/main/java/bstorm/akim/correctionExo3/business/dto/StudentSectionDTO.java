@@ -9,7 +9,7 @@ import lombok.*;
 // DTO sans info sur la section pour
 // eviter la redondance d'info dans le StudentDTO
 // Ainsi que les stackOverFlow
-public class SmolSectionDTO {
+public class StudentSectionDTO {
     private int id;
     private String name;
     private int delegateId;

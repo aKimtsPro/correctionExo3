@@ -14,7 +14,7 @@ public class StudentDTO {
     private String lastname;
     private LocalDateTime birthdate;
     private String login;
-    private SmolSectionDTO section;
+    private StudentSectionDTO section;
     private int yearResult;
     private String courseId;
 

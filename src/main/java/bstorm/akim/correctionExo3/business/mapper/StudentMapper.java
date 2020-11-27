@@ -1,21 +1,17 @@
 package bstorm.akim.correctionExo3.business.mapper;
 
-import bstorm.akim.correctionExo3.business.dto.SectionDTO;
-import bstorm.akim.correctionExo3.business.dto.SmolSectionDTO;
+import bstorm.akim.correctionExo3.business.dto.StudentSectionDTO;
 import bstorm.akim.correctionExo3.business.dto.StudentDTO;
 import bstorm.akim.correctionExo3.data_access.entities.Section;
 import bstorm.akim.correctionExo3.data_access.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
-import java.time.ZoneId;
-
 @Component
 public class StudentMapper implements Mapper<StudentDTO, Student> {
 
     @Autowired
-    private Mapper<SmolSectionDTO, Section> mapper;
+    private Mapper<StudentSectionDTO, Section> mapper;
 
     // ATTENTION, SI DEPENDENCES CIRCULAIRES, DECLARER LA DEPENDENCE AVEC @AUTOWIRED
 //    public StudentMapper(Mapper<SectionDTO, Section> mapper) {

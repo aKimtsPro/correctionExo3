@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-@Component
+//@Component
 @Profile("start")
 public class MenuPrincipalImpl implements MenuPrincipal {
 

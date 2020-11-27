@@ -10,9 +10,9 @@ import java.util.List;
 @ToString
 public class SectionDTO {
 
-    private int id;
+    private int id; // pas auto_increment
     private String name;
     private int delegateId;
 
-    private List<SmolStudentDTO> students;
+    private List<SectionStudentDTO> students;
 }

@@ -1,17 +1,17 @@
 package bstorm.akim.correctionExo3.business.mapper;
 
-import bstorm.akim.correctionExo3.business.dto.SmolSectionDTO;
+import bstorm.akim.correctionExo3.business.dto.StudentSectionDTO;
 import bstorm.akim.correctionExo3.data_access.entities.Section;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SmolSectionMapper implements Mapper<SmolSectionDTO, Section> {
+public class SmolSectionMapper implements Mapper<StudentSectionDTO, Section> {
     @Override
-    public SmolSectionDTO toDTO(Section section) {
+    public StudentSectionDTO toDTO(Section section) {
         if(section == null)
             return null;
 
-        return new SmolSectionDTO(
+        return new StudentSectionDTO(
                 section.getId(),
                 section.getName(),
                 section.getDelegateId()
@@ -19,7 +19,7 @@ public class SmolSectionMapper implements Mapper<SmolSectionDTO, Section> {
     }
 
     @Override
-    public Section toEntity(SmolSectionDTO smolSectionDTO) {
+    public Section toEntity(StudentSectionDTO smolSectionDTO) {
         if(smolSectionDTO == null)
             return null;
 
