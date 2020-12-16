@@ -7,10 +7,13 @@ import lombok.Setter;
 import java.util.List;
 
 @Setter @Getter
-@AllArgsConstructor
 public class ElementsContainer<DTO> {
 
-    private final List<DTO> list;
     private final int count;
+    private final List<DTO> list;
 
+    public ElementsContainer(List<DTO> list) {
+        this.list = list;
+        this.count = list.size();
+    }
 }

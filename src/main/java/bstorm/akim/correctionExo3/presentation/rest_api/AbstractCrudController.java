@@ -37,7 +37,7 @@ public abstract class AbstractCrudController<DTO extends IdentifiedDTO<ID>, ID> 
     @GetMapping
     public ResponseEntity<ElementsContainer<DTO>> getAll(){
         List<DTO> list = service.readAll();
-        return ResponseEntity.ok( new ElementsContainer<>(list, list.size()) );
+        return ResponseEntity.ok( new ElementsContainer<>( list ) );
     }
 
     // UPDATE - PUT > http://localhost:8081/?

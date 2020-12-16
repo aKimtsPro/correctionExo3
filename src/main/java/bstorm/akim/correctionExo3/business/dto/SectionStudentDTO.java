@@ -16,8 +16,4 @@ public class SectionStudentDTO implements IdentifiedDTO<Integer> {
     private Integer id;
     private String firstname;
     private String lastname;
-    private LocalDateTime birthdate;
-    private String login;
-    private int yearResult;
-    private String courseId;
 }

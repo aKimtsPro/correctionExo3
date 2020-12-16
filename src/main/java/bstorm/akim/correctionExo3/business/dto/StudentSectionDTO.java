@@ -12,5 +12,4 @@ import lombok.*;
 public class StudentSectionDTO implements IdentifiedDTO<Integer> {
     private Integer id;
     private String name;
-    private int delegateId;
 }
