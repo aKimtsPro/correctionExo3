@@ -1,18 +1,23 @@
 package bstorm.akim.correctionExo3.presentation.console;
 
+import bstorm.akim.correctionExo3.business.dto.IdentifiedDTO;
 import bstorm.akim.correctionExo3.business.service.CrudService;
+import bstorm.akim.correctionExo3.exception.ElementAlreadyExistsException;
 import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public abstract class MenuSecondaireImpl<DTO> implements Menu{
+public abstract class MenuSecondaire<DTO extends IdentifiedDTO<ID>,ID> implements CrudMenu<DTO,ID> {
 
     @Autowired
-    protected CrudService<DTO, Integer> service;
+    protected CrudService<DTO, ID> service;
     @Autowired
     protected Scanner scanner;
+
+    protected abstract DTO promptData();
+    protected abstract ID promptId();
 
     private void afficherMenu(){
         System.out.println("MENU SECTION:" +
@@ -23,7 +28,6 @@ public abstract class MenuSecondaireImpl<DTO> implements Menu{
                 "\n\t5 - delete;" +
                 "\n\t6 - quitter");
     }
-
     private int getChoix(){
         System.out.println("Quel est votre choix?");
         try {
@@ -58,12 +62,19 @@ public abstract class MenuSecondaireImpl<DTO> implements Menu{
         }
     }
 
-
-    protected abstract void ajouter();
+    private void ajouter(){
+        try {
+            service.create( promptData() );
+        } catch (ElementAlreadyExistsException e) {
+            System.out.println("L'element existe déjà, veuillez réessayer.");
+        } catch (InputMismatchException ime){
+            System.out.println("Données invalides. Veuillez recommencer!");
+        }
+    }
     private void lireUn(){
         System.out.println("Quel est l'id de l'élément que vous souhaitez voir.");
         try {
-            System.out.println( service.readOne(scanner.nextInt()) );
+            System.out.println( service.readOne(promptId()) );
         } catch (ElementNotFoundException e) {
             System.out.println("L'élément n'existe pas veuillez réessayer");
         }
@@ -71,11 +82,17 @@ public abstract class MenuSecondaireImpl<DTO> implements Menu{
     private void lireTout(){
         service.readAll().forEach(System.out::println);
     }
-    protected abstract void modifier();
+    private void modifier(){
+        try {
+            service.update( promptData() );
+        } catch (ElementNotFoundException e) {
+            System.out.println("L'element existe déjà, veuillez réessayer.");
+        }
+    }
     private void supprimer(){
         System.out.println("Veuillez préciser l'id de l'élément à supprimer:");
         try {
-            service.delete(scanner.nextInt());
+            service.delete(promptId());
         } catch (ElementNotFoundException e) {
             System.out.println("L'élément n'existe pas veuillez réessayer.");
         }

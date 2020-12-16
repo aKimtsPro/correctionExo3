@@ -1,4 +1,4 @@
-package bstorm.akim.correctionExo3.business.dto.reports;
+package bstorm.akim.correctionExo3.presentation.rest_api.model.reports;
 
 public class NotFoundReport extends ElementReport{
 

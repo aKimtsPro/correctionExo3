@@ -1,7 +1,7 @@
-package bstorm.akim.correctionExo3.presentation.rest_api;
+package bstorm.akim.correctionExo3.presentation.rest_api.adviser;
 
-import bstorm.akim.correctionExo3.business.dto.reports.AlreadyExistsReport;
-import bstorm.akim.correctionExo3.business.dto.reports.NotFoundReport;
+import bstorm.akim.correctionExo3.presentation.rest_api.model.reports.AlreadyExistsReport;
+import bstorm.akim.correctionExo3.presentation.rest_api.model.reports.NotFoundReport;
 import bstorm.akim.correctionExo3.exception.ElementAlreadyExistsException;
 import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
 import org.springframework.http.ResponseEntity;

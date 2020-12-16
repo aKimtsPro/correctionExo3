@@ -1,4 +1,4 @@
-package bstorm.akim.correctionExo3;
+package bstorm.akim.correctionExo3.disabled.executions;
 
 import bstorm.akim.correctionExo3.business.dto.SectionDTO;
 import bstorm.akim.correctionExo3.business.dto.StudentDTO;

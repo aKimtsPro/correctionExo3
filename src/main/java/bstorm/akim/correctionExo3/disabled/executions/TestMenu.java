@@ -1,4 +1,4 @@
-package bstorm.akim.correctionExo3;
+package bstorm.akim.correctionExo3.disabled.executions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

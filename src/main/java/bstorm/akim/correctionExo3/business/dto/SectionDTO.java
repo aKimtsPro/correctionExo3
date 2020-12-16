@@ -8,9 +8,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class SectionDTO {
+public class SectionDTO implements IdentifiedDTO<Integer>{
 
-    private int id; // pas auto_increment
+    private Integer id; // pas auto_increment
     private String name;
     private int delegateId;
 

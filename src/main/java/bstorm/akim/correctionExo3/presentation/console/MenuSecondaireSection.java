@@ -3,14 +3,23 @@ package bstorm.akim.correctionExo3.presentation.console;
 import bstorm.akim.correctionExo3.business.dto.SectionDTO;
 import bstorm.akim.correctionExo3.exception.ElementAlreadyExistsException;
 import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.util.InputMismatchException;
+
 @Component
-public class MenuSecondaireSection extends MenuSecondaireImpl<SectionDTO> {
+@Profile("console")
+public class MenuSecondaireSection extends MenuSecondaire<SectionDTO, Integer> {
 
     @Override
-    protected void ajouter(){
+    protected Integer promptId() {
+        System.out.print("Veuillez entrer un ID:");
+        return scanner.nextInt();
+    }
 
+    @Override
+    protected SectionDTO promptData(){
         System.out.println("Veuillez entrer la section à ajouter:");
         System.out.println("- ID -");
         int id = scanner.nextInt();
@@ -18,40 +27,12 @@ public class MenuSecondaireSection extends MenuSecondaireImpl<SectionDTO> {
         String name = scanner.next();
         System.out.println("- Delegate id -");
         int delegateId = scanner.nextInt();
-
-        try {
-            service.create(new SectionDTO(
-                    id,
-                    name,
-                    delegateId,
-                    null
-            ));
-        } catch (ElementAlreadyExistsException e) {
-            System.out.println("L'element existe déjà, veuillez réessayer.");
-        }
-
-    }
-    @Override
-    protected void modifier(){
-        System.out.println("Veuillez entrer la section à modifier:");
-        System.out.println("- ID -");
-        int id = scanner.nextInt();
-        System.out.println("Veuillez entrer les nouvelles infos de cet element");
-        System.out.println("- NAME -");
-        String name = scanner.next();
-        System.out.println("- Delegate id -");
-        int delegateId = scanner.nextInt();
-
-        try {
-            service.update(new SectionDTO(
-                    id,
-                    name,
-                    delegateId,
-                    null
-            ));
-        } catch (ElementNotFoundException e) {
-            System.out.println("L'element existe déjà, veuillez réessayer.");
-        }
+        return new SectionDTO(
+                id,
+                name,
+                delegateId,
+                null
+        );
     }
 
 }

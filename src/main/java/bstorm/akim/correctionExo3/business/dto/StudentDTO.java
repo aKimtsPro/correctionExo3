@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class StudentDTO {
+public class StudentDTO implements IdentifiedDTO<Integer> {
 
-    private int id;
+    private Integer id;
     private String firstname;
     private String lastname;
     private LocalDateTime birthdate;

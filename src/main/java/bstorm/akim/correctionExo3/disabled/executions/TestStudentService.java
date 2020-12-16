@@ -1,9 +1,7 @@
-package bstorm.akim.correctionExo3;
+package bstorm.akim.correctionExo3.disabled.executions;
 
 import bstorm.akim.correctionExo3.business.dto.StudentDTO;
 import bstorm.akim.correctionExo3.business.service.StudentService;
-import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
-import bstorm.akim.correctionExo3.exception.StudentAlreadyExistsException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

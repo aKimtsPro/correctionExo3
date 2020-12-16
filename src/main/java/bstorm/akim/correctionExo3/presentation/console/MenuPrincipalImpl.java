@@ -1,5 +1,7 @@
 package bstorm.akim.correctionExo3.presentation.console;
 
+import bstorm.akim.correctionExo3.business.dto.SectionDTO;
+import bstorm.akim.correctionExo3.business.dto.StudentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -7,16 +9,16 @@ import org.springframework.stereotype.Component;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//@Component
-@Profile("start")
+@Component
+@Profile("console")
 public class MenuPrincipalImpl implements MenuPrincipal {
 
     @Autowired
     private Scanner scanner;
     @Autowired
-    private MenuSecondaireSection menuSection;
+    private CrudMenu<SectionDTO, Integer> menuSection;
     @Autowired
-    private MenuSecondaireStudent menuStudent;
+    private CrudMenu<StudentDTO, Integer> menuStudent;
 
     private void afficherMenu(){
         System.out.println("MENU PRINCIPAL:\n" +
@@ -62,7 +64,6 @@ public class MenuPrincipalImpl implements MenuPrincipal {
             choix = getChoix();
             mapChoix(choix);
         }while (choix != 3);
-
     }
 
     @Override

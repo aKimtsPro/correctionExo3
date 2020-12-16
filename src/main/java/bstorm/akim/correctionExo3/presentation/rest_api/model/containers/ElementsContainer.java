@@ -1,4 +1,4 @@
-package bstorm.akim.correctionExo3.business.dto.container;
+package bstorm.akim.correctionExo3.presentation.rest_api.model.containers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

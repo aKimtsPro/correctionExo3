@@ -1,13 +1,8 @@
-package bstorm.akim.correctionExo3;
+package bstorm.akim.correctionExo3.disabled.executions;
 
-import bstorm.akim.correctionExo3.business.dto.StudentDTO;
-import bstorm.akim.correctionExo3.business.service.StudentService;
-import bstorm.akim.correctionExo3.exception.ElementNotFoundException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-
-import java.util.Arrays;
 
 @SpringBootApplication
 public class CorrectionExoStream {
@@ -32,7 +27,6 @@ public class CorrectionExoStream {
         // System.out.println("success in 1120 : " + service.successFromSection(1120));
         // service.addPointsToStartingWithLetter(6, 'e'); // ajoute 6 à eastwood
         //System.out.println("nombre de succes : " + service.countSuccess());
-        System.out.println("finished");
     }
 
 }

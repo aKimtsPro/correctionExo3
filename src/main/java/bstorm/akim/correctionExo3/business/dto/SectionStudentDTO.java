@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 // DTO sans info sur la section pour
 // eviter la redondance d'info dans le SectionDTO
 // Ainsi que les stackOverFlow
-public class SectionStudentDTO {
-    private int id;
+public class SectionStudentDTO implements IdentifiedDTO<Integer> {
+    private Integer id;
     private String firstname;
     private String lastname;
     private LocalDateTime birthdate;
